@@ -14,13 +14,13 @@ function takesnapshot() {
     });
 }
 console.log("ml5version",ml5.version)
-Classfier=ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/El6NUu5Iv/",model_loaded);
+Classfier=ml5.imageClassifier("https://teachablemachine.withgoogle.com/models/El6NUu5Iv/model.json",model_loaded);
 function model_loaded() {
     console.log("model is loaded")
 }
 function speak() {
  synth=window.speechSynthesis;
- speakdata1="The first prediction is "+ prediction1;
+ speakdata1="The first prediction is "+prediction1;
  speakdata2="The seconf prediction is "+prediction2;
  var utterance=new SpeechSynthesisUtterance(speakdata1+speakdata2);
  synth.speak(utterance);
